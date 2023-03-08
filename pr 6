@@ -1,0 +1,30 @@
+import numpy as np 
+import math
+import matplotlib.pyplot as plt 
+from sklearn.datasets import load_iris
+from sklearn import datasets, linear_model, metrics
+dataset = load_iris() 
+a = dataset.data
+b = np.zeros(150)
+print(dataset)
+for i in range (150):
+  b[i]=a[i,1]
+#sort the array
+b=np.sort(b)
+
+print(b.size)
+bin1=np.zeros((30,5)) 
+bin2=np.zeros((30,5)) 
+bin3=np.zeros((30,5)) 
+print(bin1.size)
+for i in range (0,150,5):
+  k=int(i/5)
+  mean=(b[i] + b[i+1] + b[i+2] + b[i+3] + b[i+4])/5
+  for j in range(5):
+    bin1[k,j]=mean
+
+print("Bin Mean: \n",bin1)
+
+plt.hist(bin1)
+
+plt.show()
