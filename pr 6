@@ -28,3 +28,26 @@ print("Bin Mean: \n",bin1)
 plt.hist(bin1)
 
 plt.show()
+
+for i in range (0,150,5): 
+  k=int(i/5)
+  for j in range (5):
+    if (b[i+j]-b[i]) < (b[i+4]-b[i+j]): 
+      bin2[k,j]=b[i]
+    else:
+      bin2[k,j]=b[i+4]
+
+print("\n")
+print("Bin Boundaries: \n",bin2)
+plt.hist(bin2)
+
+plt.show()
+
+for i in range (0,150,5):
+  k=int(i/5)
+  for j in range (5): 
+   bin3[k,j]=b[i+2]
+print("Bin Median: \n",bin3)
+plt.hist(bin3)
+
+plt.show()
